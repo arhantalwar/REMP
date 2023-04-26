@@ -12,17 +12,24 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html")
 })
 
+app.get("/root", (req, res) => {
+    res.sendFile(__dirname + "/root.html")
+})
+
 io.on("connection", (socket) => {
     clients.push(socket.id)
     console.log(clients)
 
-    socket.on("disconnect", (socket) => {
-        clients.splice(clients.indexOf(socket), 1);
+    socket.on('playMe', (num) => {
+        //console.log(num)
+        io.emit('played', num)
+    })
+
+    socket.on("disconnect", (socket) => { 
+        clients.splice(clients.indexOf(socket) - 1, 1);
         console.log(clients)
-        
     })
 })
 
 
 server.listen(3000)
-

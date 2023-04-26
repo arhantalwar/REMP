@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Home</title>
+        <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet">
         <script src="/socket.io/socket.io.js"></script>
         <script>
+
             const socket = io();
             socket.on("connect", (socket) => {});
-            socket.on('played', num => {
-                const hdr = document.getElementById('hdr')
-                hdr.innerText = Math.floor(Math.random() * 100)
-            })
+
+            function doMe() {
+                socket.emit('playMe', 10)
+            }
+
         </script>
     </head>
     <body>
-        <h1 id="hdr"></h1>
+
+        <button onclick="doMe()">CLICK ME</button>
+    
     </body>
 </html>
