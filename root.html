@@ -4,7 +4,6 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
         <script src="/socket.io/socket.io.js"></script>
         <script>
 
@@ -12,7 +11,7 @@
             socket.on("connect", (socket) => {});
 
             function doMe() {
-                socket.emit('playMe', 10)
+                socket.emit('playMe', 100)
             }
 
         </script>

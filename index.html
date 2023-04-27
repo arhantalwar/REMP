@@ -4,18 +4,36 @@
         <title>Home</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
         <script>
+
+
             const socket = io();
-            socket.on("connect", (socket) => {});
             socket.on('played', num => {
+
                 const hdr = document.getElementById('hdr')
-                hdr.innerText = Math.floor(Math.random() * 100)
+                hdr.innerText = "Playing"
+                const ss = document.getElementById('sound')
+                ss.play()
+
+                //window.location.href = "/muu"
+                //const pra = document.getElementById('pra')
+                //const pra2 = document.getElementById('pra2')
+                //hdr.innerText = Math.floor(Math.random() * num)
+                //hdr.innerText > 50 ? pra.innerText = "Hight" : pra.innerText = "Low"
+
             })
+
         </script>
     </head>
     <body>
         <h1 id="hdr"></h1>
+        <p id="pra"></p>
+        <p id="pra2"></p>
+        <audio controls id="sound">
+            <source src="shakeitoff.mp3">
+        </audio>
     </body>
 </html>
