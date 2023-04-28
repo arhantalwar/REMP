@@ -4,11 +4,27 @@
         <title>Home</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
+        <style>
+
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+
+            #boxx {
+                position: absolute;
+                top: -10vh;
+                right: 0;
+            }
+
+
+
+        </style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
         <script>
-
 
             const socket = io();
             socket.on('played', num => {
@@ -32,8 +48,10 @@
         <h1 id="hdr"></h1>
         <p id="pra"></p>
         <p id="pra2"></p>
-        <audio controls id="sound">
-            <source src="shakeitoff.mp3">
-        </audio>
+        <div id="boxx">
+            <audio controls id="sound">
+                <source src="shakeitoff.mp3">
+            </audio>
+        </div>
     </body>
 </html>

@@ -1,3 +1,13 @@
-there should be a boiler plate for readme's
+What better than to prank in your class with some random sounds being played while your teaching is teaching about some ELF header and whatnot....
 
-anyways
+start the server:
+    npm run dev
+
+there are two pages....
+
+1) / => /index
+The one where we would have (nothing) something.
+
+2) /root
+The one with just a button
+
